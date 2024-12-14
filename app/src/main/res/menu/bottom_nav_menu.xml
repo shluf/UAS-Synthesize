@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item
+        android:id="@+id/chatFragment"
+        android:title="Chat"
+        app:showAsAction="ifRoom"
+        android:icon="@drawable/ic_chat" />
+
+    <item
+        android:id="@+id/threadFragment"
+        android:title="Threads"
+        app:showAsAction="ifRoom"
+        android:icon="@drawable/ic_thread" />
+
+    <item
+        android:id="@+id/likedFragment"
+        android:title="Liked"
+        app:showAsAction="ifRoom"
+        android:icon="@drawable/ic_liked" />
+
+    <item
+        android:id="@+id/profileFragment"
+        android:title="Profile"
+        app:showAsAction="ifRoom"
+        android:icon="@drawable/ic_profile" />
+</menu>

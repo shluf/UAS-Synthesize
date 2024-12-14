@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="primary_color">#4CAF50</color>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+    <color name="light_grey">#A9AAAE</color>
+    <color name="primary_light">#FAE8EB</color>
+    <color name="primary_dark">#392F5A</color>
+    <color name="accent_green_light">#69B578</color>
+    <color name="accent_green_dark">#3A7D44</color>
+    <color name="accent_green_deepest">#254D32</color>
+
+    <color name="auth_background">#0A0E1A</color>
+    <color name="auth_primary">#1E2541</color>
+    <color name="auth_accent">#4DFFFFFF</color>
+    <color name="auth_text">#E0E0E0</color>
+</resources>
