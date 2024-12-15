@@ -5,6 +5,8 @@ import com.example.uas_synthesize.databinding.ItemUserBinding
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
+import com.bumptech.glide.Glide
+import com.example.uas_synthesize.R
 
 class UserAdapter(
     private val userList: List<User>,
@@ -26,6 +28,13 @@ class UserAdapter(
         fun bind(user: User) {
             binding.tvUserName.text = user.username
             binding.tvFullName.text = user.profile.name
+
+            Glide.with(itemView.context)
+                .load(user.profile.avatar)
+                .placeholder(R.drawable.placeholder_avatar)
+                .error(R.drawable.placeholder_error_avatar)
+                .into(binding.ivUser)
+
             binding.root.setOnClickListener {
                 onUserClick(user)
             }

@@ -1,14 +1,12 @@
-package com.example.uas_synthesize
+package com.example.uas_synthesize.ui
 
 import android.content.Intent
 import android.os.Bundle
-import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.view.ViewCompat
-import androidx.core.view.WindowInsetsCompat
 import androidx.navigation.NavController
 import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.ui.NavigationUI
+import com.example.uas_synthesize.R
 import com.example.uas_synthesize.databinding.ActivityMainBinding
 import com.example.uas_synthesize.ui.auth.LoginActivity
 import com.example.uas_synthesize.utils.PrefManager

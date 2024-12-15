@@ -41,11 +41,11 @@ android {
 }
 
 dependencies {
-//    room
+//  Room
     implementation(libs.androidx.room.common)
     implementation(libs.androidx.room.ktx)
     kapt(libs.androidx.room.compiler)
-//    navigation
+//  Navigation
     implementation(libs.androidx.navigation.fragment.ktx)
     implementation(libs.androidx.navigation.ui.ktx)
 //  Api(retrofit)
@@ -56,11 +56,9 @@ dependencies {
     implementation(libs.glide)
 //  Circle Image
     implementation(libs.circleimageview)
-//  Swipe Reveal
-//    implementation(libs.swipe.reveal.layout)
 //  Cloudinary
     implementation(libs.cloudinary.android)
-//  default
+//  Default
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.appcompat)
     implementation(libs.material)

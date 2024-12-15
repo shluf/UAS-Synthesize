@@ -36,7 +36,7 @@ class SwipeToDeleteCallback(
     ) {
         val itemView = viewHolder.itemView
         val paint = Paint()
-        paint.color = Color.RED
+        paint.color = Color.parseColor("#FF392F5A")
 
         // Gambar background
         if (dX < 0) {

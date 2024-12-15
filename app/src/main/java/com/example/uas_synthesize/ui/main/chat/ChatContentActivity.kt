@@ -12,6 +12,7 @@ import android.widget.Toast
 import androidx.annotation.RequiresApi
 import androidx.lifecycle.lifecycleScope
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.bumptech.glide.Glide
 import com.example.uas_synthesize.data.model.get.Chat
 import com.example.uas_synthesize.data.model.get.Comment
 import com.example.uas_synthesize.data.model.get.Message
@@ -37,6 +38,7 @@ class ChatContentActivity : AppCompatActivity() {
 
     private lateinit var currentUsername: String
     private lateinit var receiver: String
+    private lateinit var receiverAvatar: String
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -47,10 +49,21 @@ class ChatContentActivity : AppCompatActivity() {
         currentUsername = prefManager.getUsername()
 
         chat = intent.getParcelableExtra("chat")!!
+
+
         receiver = if (chat.username2 == currentUsername) chat.username1 else chat.username2
+        receiverAvatar = if (chat.username2 == currentUsername) chat.avatar1 else chat.avatar2
 
         setupRecyclerView()
         displayChatData()
+
+        binding.tvName.text = receiver
+
+        Glide.with(this)
+            .load(receiverAvatar)
+            .placeholder(R.drawable.placeholder_avatar)
+            .error(R.drawable.placeholder_error_avatar)
+            .into(binding.ivUserAvatar)
 
         binding.buttonSend.setOnClickListener {
             val messageContent = binding.editTextMessage.text.toString().trim()

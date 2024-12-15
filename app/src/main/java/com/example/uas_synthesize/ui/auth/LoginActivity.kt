@@ -3,20 +3,13 @@ package com.example.uas_synthesize.ui.auth
 import android.content.Intent
 import android.os.Bundle
 import android.widget.Toast
-import androidx.activity.enableEdgeToEdge
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.view.ViewCompat
-import androidx.core.view.WindowInsetsCompat
 import androidx.lifecycle.lifecycleScope
-import com.example.uas_synthesize.MainActivity
-import com.example.uas_synthesize.R
-import com.example.uas_synthesize.data.model.get.User
-import com.example.uas_synthesize.data.model.view.LoginViewModel
+import com.example.uas_synthesize.ui.MainActivity
+import com.example.uas_synthesize.utils.view_model.LoginViewModel
 import com.example.uas_synthesize.databinding.ActivityLoginBinding
 import com.example.uas_synthesize.utils.PrefManager
-import kotlinx.coroutines.CoroutineScope
-import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 
 class LoginActivity : AppCompatActivity() {

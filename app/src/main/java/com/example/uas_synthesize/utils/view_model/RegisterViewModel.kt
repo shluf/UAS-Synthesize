@@ -1,8 +1,7 @@
-package com.example.uas_synthesize.data.model.view
+package com.example.uas_synthesize.utils.view_model
 
 import androidx.lifecycle.ViewModel
 import com.example.uas_synthesize.data.model.get.Profile
-import com.example.uas_synthesize.data.model.get.User
 import com.example.uas_synthesize.data.model.post.UserSend
 import com.example.uas_synthesize.data.network.ApiClient
 import kotlinx.coroutines.Dispatchers

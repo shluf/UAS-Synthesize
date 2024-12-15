@@ -5,6 +5,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
+import androidx.core.content.ContextCompat
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.example.uas_synthesize.R
@@ -14,7 +15,8 @@ import com.google.android.material.button.MaterialButton
 class ThreadAdapter(
     private val threads: List<ThreadPost>,
     private val onThreadClick: (ThreadPost) -> Unit,
-    private val onLikeClick: (ThreadPost) -> Unit
+    private val onLikeClick: (ThreadPost) -> Unit,
+    private val isLiked: Boolean = false
 ) : RecyclerView.Adapter<ThreadAdapter.ThreadViewHolder>() {
 
     inner class ThreadViewHolder(view: View) : RecyclerView.ViewHolder(view) {
@@ -46,6 +48,10 @@ class ThreadAdapter(
             .placeholder(R.drawable.placeholder_avatar)
             .error(R.drawable.placeholder_error_avatar)
             .into(holder.ivAvatar)
+
+        if (isLiked) {
+            holder.btnLike.icon = ContextCompat.getDrawable(holder.itemView.context, R.drawable.ic_liked)
+        }
 
         holder.itemView.setOnClickListener {
             onThreadClick(thread)

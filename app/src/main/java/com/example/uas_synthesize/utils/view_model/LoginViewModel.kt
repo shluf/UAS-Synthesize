@@ -1,4 +1,4 @@
-package com.example.uas_synthesize.data.model.view
+package com.example.uas_synthesize.utils.view_model
 
 import androidx.lifecycle.ViewModel
 import com.example.uas_synthesize.data.model.get.User

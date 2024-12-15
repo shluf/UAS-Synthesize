@@ -67,7 +67,8 @@ class LikedFragment : Fragment() {
             },
             onLikeClick = { thread ->
                 unlikeThread(thread)
-            }
+            },
+            isLiked = true
         )
 
         recyclerView.layoutManager = LinearLayoutManager(context)
@@ -96,7 +97,7 @@ class LikedFragment : Fragment() {
                 likedThreads.clear()
                 likedThreads.addAll(threads)
 
-                // Update UI on main thread
+                // Update UI
                 CoroutineScope(Dispatchers.Main).launch {
                     likedThreadAdapter.notifyDataSetChanged()
                 }
@@ -110,10 +111,9 @@ class LikedFragment : Fragment() {
 
     private fun fetchComments(threadId: String): List<Comment> {
         return runBlocking {
-            // Fetch CommentEntity from the database
+            // Fetch CommentEntity
             val commentEntities = likedThreadDao.getCommentsByThread(threadId).firstOrNull() ?: emptyList()
 
-            // Map CommentEntity to Comment
             commentEntities.map { entity ->
                 Comment(
                     author = entity.author,
@@ -127,10 +127,10 @@ class LikedFragment : Fragment() {
     private fun unlikeThread(thread: ThreadPost) {
         CoroutineScope(Dispatchers.IO).launch {
             try {
-                // Delete from Room
+                // Delete dari Room
                 likedThreadDao.deleteLikedThread(thread._id)
 
-                // Remove from list
+                // Remove dari list
                 likedThreads.remove(thread)
 
                 CoroutineScope(Dispatchers.Main).launch {

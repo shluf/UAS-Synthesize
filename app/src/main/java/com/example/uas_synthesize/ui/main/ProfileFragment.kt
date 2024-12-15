@@ -244,10 +244,10 @@ class ProfileFragment : Fragment() {
     }
 
     private fun displayGuestUserData() {
-        val username = ""
+        val username = "akun_guest"
         val name = "Guest"
         val avatarUrl = ""
-        val bio = "You're logged in as guest"
+        val bio = "Kamu login sebagai guest"
 
         binding.tvUsername.text = username
         binding.tvName.text = name

@@ -47,7 +47,17 @@ class CommentActivity : AppCompatActivity() {
             binding.layoutAddComment.visibility = View.VISIBLE
         }
 
+//      TOOLBAR
+        val toolbar: androidx.appcompat.widget.Toolbar = findViewById(R.id.toolbar)
+        setSupportActionBar(toolbar)
 
+        supportActionBar?.apply {
+            setDisplayHomeAsUpEnabled(true)
+            setDisplayShowTitleEnabled(false)
+            setHomeAsUpIndicator(R.drawable.ic_arrow_back)
+        }
+
+//      RECYCLE VIEW
         recyclerView = binding.recyclerViewComments
 
         commentAdapter = CommentAdapter(comments)
@@ -106,5 +116,10 @@ class CommentActivity : AppCompatActivity() {
                 }
             }
         }
+    }
+
+    override fun onSupportNavigateUp(): Boolean {
+        onBackPressed()
+        return true
     }
 }
